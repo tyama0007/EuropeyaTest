@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  europeyatest.api:
+    image: ${DOCKER_REGISTRY-}europeyatestapi
+    build:
+      context: .
+      dockerfile: EuropeyaTest.Api/Dockerfile
+    environment:
+      - BotToken=6133428642:AAEMRPIdInGzWRuvAcgf5jdOuDDzw6KEYCA
+      - DB_CS=host=host.docker.internal;port=5627;database=Europeya;username=postgres;password=98GerodoT98;
+      - HostAddress=https://0019-95-25-156-178.ngrok.io
+    ports:
+      - "13400:80"
+      - "13401:443"
