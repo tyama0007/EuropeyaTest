@@ -15,7 +15,7 @@ namespace EuropeyaTest.Api
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Logging.ClearProviders();
+            //builder.Logging.ClearProviders();
 
 
             builder.Configuration
@@ -25,7 +25,6 @@ namespace EuropeyaTest.Api
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
 
 
             var origins = builder.Configuration.GetSection("CorsOrigins:Urls").Get<string[]>();
